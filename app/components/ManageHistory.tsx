@@ -10,7 +10,7 @@ export default function AddToList({
 		// Passing in handleSubmit prop to trigger addItem function on form submission
 
 		<div className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2">
-			<div className="flex flex-col rounded-3xl bg-zinc-200 px-4 py-6">
+			<div className="flex flex-col rounded-3xl bg-zinc-300 px-4 py-6 shadow">
 				<div className="flex w-full flex-row justify-between gap-4">
 					<button
 						type="button"
