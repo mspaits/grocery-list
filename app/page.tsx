@@ -26,7 +26,7 @@ export default function LogIn() {
 			</h1>
 			<p className="mx-4 my-8 text-center text-xl">Please log in with your username</p>
 			<div className="mx-auto flex w-full max-w-3xl min-w-0 flex-col px-2">
-				<div className="flex flex-wrap justify-center rounded-3xl bg-amber-300 shadow">
+				<div className="flex flex-wrap justify-center rounded-3xl bg-emerald-200 shadow">
 					<Form action={getUserName} className="flex w-full max-w-xs flex-col gap-2 p-4">
 						<label htmlFor="userName">Username</label>
 						<input
