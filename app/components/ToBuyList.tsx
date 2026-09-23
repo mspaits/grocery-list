@@ -39,11 +39,11 @@ export default function ToBuyList({
 											const preCheck = listItem.isChecked ? true : false;
 
 											return (
-												<li className="flex text-xl" key={listItem.name}>
+												<li className="my-2 flex text-xl" key={listItem.name}>
 													<div className="flex gap-x-4 sm:col-span-2">
 														<div className="flex items-center">
-															<div className="group relative inline-flex w-8 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-green-600 has-focus-visible:outline-2">
-																<span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5"></span>
+															<div className="group relative inline-flex w-11 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-green-600 has-focus-visible:outline-2">
+																<span className="size-5.5 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-5"></span>
 																<input
 																	id={listItem.name}
 																	type="checkbox"
