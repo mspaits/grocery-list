@@ -4,16 +4,26 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 
-export default function Navbar({ pageTitle, logOut }: { pageTitle: string; logOut: () => void }) {
+export default function Navbar({
+	pageTitle,
+	bgColor,
+	logOut,
+}: {
+	pageTitle: string;
+	bgColor: string;
+	logOut: () => void;
+}) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const buttonFormat =
 		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition hover:bg-amber-700 hover:shadow-md hover:shadow-black/25';
 
 	return (
-		<div className="relative z-50 bg-lime-700 drop-shadow-lg">
-			<header className="mx-auto flex w-full max-w-188 items-center justify-between rounded bg-lime-700 px-4 py-6 text-black">
-				<p className="text-4xl font-bold tracking-tight text-white">{pageTitle}</p>
+		<div className={`relative z-50 ${bgColor} drop-shadow-lg`}>
+			<header
+				className={`mx-auto flex w-full max-w-188 items-center justify-between rounded ${bgColor} px-4 py-6 text-black`}
+			>
+				<p className="text-4xl font-bold tracking-tight text-gray-700">{pageTitle}</p>
 
 				<ul className="hidden items-center gap-8 md:flex">
 					<Link href="/main-list" className={buttonFormat}>

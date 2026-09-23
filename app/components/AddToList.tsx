@@ -12,8 +12,30 @@ export default function AddToList({
 	return (
 		// Passing in handleSubmit prop to trigger addItem function on form submission
 
-		<div className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2">
-			<Form action={handleSubmit} className="flex flex-col rounded-3xl bg-green-200 p-3 shadow">
+		<Form
+			action={handleSubmit}
+			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2"
+		>
+			<div className="mb-3 flex items-center px-6 py-4">
+				<div className="flex w-full flex-row justify-between gap-6">
+					<button
+						type="submit"
+						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg hover:bg-amber-700 hover:shadow-md hover:shadow-black/25"
+					>
+						Add Item
+					</button>
+
+					<button
+						formAction={moveChecks}
+						type="submit"
+						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg hover:bg-amber-700 hover:shadow-md hover:shadow-black/25"
+					>
+						Finish Shopping
+					</button>
+				</div>
+			</div>
+
+			<div className="flex flex-col rounded-3xl bg-lime-200 p-3 shadow">
 				<div className="flex flex-col">
 					<div id="warner" className="mx-auto flex w-full max-w-2xl flex-wrap px-2 text-red-500">
 						{warning}
@@ -78,26 +100,7 @@ export default function AddToList({
 						</datalist>
 					</div>
 				</div>
-
-				<div className="flex items-center px-1 py-4">
-					<div className="flex w-full flex-row justify-between gap-4">
-						<button
-							type="submit"
-							className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white hover:bg-amber-700 hover:shadow-md hover:shadow-black/25"
-						>
-							Add Item
-						</button>
-
-						<button
-							formAction={moveChecks}
-							type="submit"
-							className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white hover:bg-amber-700 hover:shadow-md hover:shadow-black/25"
-						>
-							Clear Checked Items
-						</button>
-					</div>
-				</div>
-			</Form>
-		</div>
+			</div>
+		</Form>
 	);
 }

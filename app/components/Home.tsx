@@ -93,7 +93,7 @@ export default function Home({
 
 	return (
 		<>
-			<Navbar pageTitle={'Grocery List'} logOut={logOut}></Navbar>
+			<Navbar pageTitle={'Shopping List'} bgColor={''} logOut={logOut}></Navbar>
 			<ToBuyList listToRender={list} saveChecks={saveCheckState}></ToBuyList>
 			<AddToList handleSubmit={addItem} moveChecks={moveToHistory} warning={warning}></AddToList>
 			<IntroStatement sponsor={"Carl's Jr."}></IntroStatement>
