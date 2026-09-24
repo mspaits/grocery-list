@@ -66,8 +66,7 @@ export default function AddToList({
 							type="text"
 							id="store"
 							name="store"
-							placeholder="Wegman's"
-							defaultValue="Food Lion"
+							placeholder="Wegmans"
 							className="rounded-lg bg-white p-2 shadow"
 						/>
 					</div>
@@ -81,7 +80,7 @@ export default function AddToList({
 							className="rounded-lg bg-white p-2 shadow"
 							list="sectionList"
 						/>
-						<datalist id="sectionList">
+						<datalist id="s_l_ct__nL_st">
 							<option>Bakery</option>
 							<option>Beverages</option>
 							<option>Bread & Cereal</option>
