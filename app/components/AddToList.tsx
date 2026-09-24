@@ -35,7 +35,7 @@ export default function AddToList({
 				</div>
 			</div>
 
-			<div className="flex flex-col rounded-3xl bg-lime-200 p-3 shadow">
+			<div className="flex flex-col rounded-3xl bg-lime-300 p-3 shadow">
 				<div className="flex flex-col">
 					<div id="warner" className="mx-auto flex w-full max-w-2xl flex-wrap px-2 text-red-500">
 						{warning}

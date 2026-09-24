@@ -1,50 +1,13 @@
-'use client';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
+import LoginForm from '@/app/components/LoginForm';
 
-import Form from 'next/form';
-import { useRouter } from 'next/navigation';
+export default async function logIn() {
+	const cookieStore = await cookies();
 
-export default function LogIn() {
-	const router = useRouter();
-
-	async function getUserName(formData: FormData) {
-		const userName = formData.get('userName');
-		console.log(userName);
-
-		if (typeof userName !== 'string' || !userName.trim()) {
-			return;
-		}
-
-		document.cookie = `userName=${userName.trim()}; path=/; SameSite=Lax; Secure`;
-
-		router.push('/main-list');
+	if (cookieStore.get('userName')?.value) {
+		redirect('/main-list');
 	}
 
-	return (
-		<div>
-			<h1 className="bg-lime-700 py-6 text-center text-4xl font-bold tracking-tight text-white drop-shadow">
-				Good Morning!
-			</h1>
-			<p className="mx-4 my-8 text-center text-xl">Please log in with your username</p>
-			<div className="mx-auto flex w-full max-w-3xl min-w-0 flex-col px-2">
-				<div className="flex flex-wrap justify-center rounded-3xl bg-green-200 shadow">
-					<Form action={getUserName} className="flex w-full max-w-xs flex-col gap-2 p-4">
-						<label htmlFor="userName">Username</label>
-						<input
-							type="text"
-							id="userName"
-							name="userName"
-							placeholder="username"
-							className="rounded-lg border bg-white p-2"
-						/>
-						<button
-							type="submit"
-							className="rounded-lg bg-amber-600 px-3 py-2 font-medium text-white hover:bg-amber-700 hover:shadow-md hover:shadow-black/25"
-						>
-							Submit
-						</button>
-					</Form>
-				</div>
-			</div>
-		</div>
-	);
+	return <LoginForm />;
 }

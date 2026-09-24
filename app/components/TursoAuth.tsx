@@ -101,7 +101,6 @@ export async function setActiveStateDB(groceryObjects: groceryObject[]) {
 export async function getUser() {
 	const cookieStore = await cookies();
 	const userName: string | undefined = cookieStore.get('userName')?.value;
-	console.log(userName);
 
 	if (!userName) {
 		redirect('/');
