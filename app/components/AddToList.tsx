@@ -79,8 +79,9 @@ export default function AddToList({
 							placeholder="Dairy"
 							className="rounded-lg bg-white p-2 shadow"
 							list="sectionList"
+							autoComplete="off"
 						/>
-						<datalist id="s_l_ct__nL_st">
+						<datalist id="sectionList">
 							<option>Bakery</option>
 							<option>Beverages</option>
 							<option>Bread & Cereal</option>
