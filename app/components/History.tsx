@@ -6,6 +6,7 @@ import IntroStatement from '@/app/components/IntroStatement';
 import { type groceryObject } from '@/app/components/TypeDefinitions';
 import { useState, type ChangeEvent } from 'react';
 import { checkDB, deleteFromDB, setActiveStateDB } from '@/app/components/TursoAuth';
+import { ClipboardList } from 'lucide-react';
 
 export default function History({ initialList }: { initialList: groceryObject[] }) {
 	const [historyList, setHistoryList] = useState<groceryObject[]>(initialList);
@@ -72,7 +73,12 @@ export default function History({ initialList }: { initialList: groceryObject[] 
 
 	return (
 		<>
-			<Navbar pageTitle={'Purchase History'} bgColor={''} logOut={logOut}></Navbar>
+			<Navbar
+				pageTitle={'Purchase History'}
+				bgColor={''}
+				logOut={logOut}
+				icon={ClipboardList}
+			></Navbar>
 			<ToBuyList listToRender={historyList} saveChecks={saveCheckState}></ToBuyList>
 			<ManageHistory
 				removeChecks={deleteChecks}

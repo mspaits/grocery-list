@@ -26,7 +26,7 @@ export default function ToBuyList({
 
 						return (
 							<div className="my-3 rounded-3xl bg-white px-6 py-4 shadow" key={store}>
-								<p className="mb-2 text-2xl font-bold">{store}</p>
+								<p className="mb-2 text-xl font-bold">{store}</p>
 								<ul>
 									{
 										// List items under their coresponding stores
@@ -39,7 +39,7 @@ export default function ToBuyList({
 											const preCheck = listItem.isChecked ? true : false;
 
 											return (
-												<li className="my-2 flex text-xl" key={listItem.name}>
+												<li className="my-2 flex text-lg" key={listItem.name}>
 													<div className="flex gap-x-4 sm:col-span-2">
 														<div className="flex items-start pt-0.5">
 															<div className="group relative inline-flex w-11 shrink-0 rounded-full bg-gray-200 p-px inset-ring inset-ring-gray-900/5 outline-offset-2 outline-indigo-600 transition-colors duration-200 ease-in-out has-checked:bg-green-600 has-focus-visible:outline-2">

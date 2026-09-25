@@ -2,16 +2,18 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { LucideIcon, Menu } from 'lucide-react';
 
 export default function Navbar({
 	pageTitle,
 	bgColor,
 	logOut,
+	icon: Icon,
 }: {
 	pageTitle: string;
 	bgColor: string;
 	logOut: () => void;
+	icon: LucideIcon;
 }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,9 +23,12 @@ export default function Navbar({
 	return (
 		<div className={`relative z-50 ${bgColor} drop-shadow-lg`}>
 			<header
-				className={`mx-auto flex w-full max-w-188 items-center justify-between rounded ${bgColor} px-4 py-6 text-black`}
+				className={`mx-auto flex w-full max-w-188 items-center justify-between rounded ${bgColor} px-4 pt-6 pb-2 text-black`}
 			>
-				<p className="text-4xl font-bold tracking-tight text-gray-700">{pageTitle}</p>
+				<div className="flex items-center gap-3">
+					<Icon size={28} className="text-lime-500" />
+					<p className="text-3xl font-bold tracking-tight text-gray-700">{pageTitle}</p>
+				</div>
 
 				<ul className="hidden items-center gap-8 md:flex">
 					<Link href="/main-list" className={buttonFormat}>
@@ -38,10 +43,10 @@ export default function Navbar({
 				</ul>
 
 				<Menu
-					size={40}
+					size={34}
 					className="me-6 hover:shadow-md hover:shadow-black/25 md:hidden"
 					onClick={() => setIsMenuOpen(!isMenuOpen)}
-				></Menu>
+				/>
 
 				<div
 					inert={!isMenuOpen}
