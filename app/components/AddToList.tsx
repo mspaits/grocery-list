@@ -16,8 +16,8 @@ export default function AddToList({
 			action={handleSubmit}
 			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2"
 		>
-			<div className="mb-3 flex items-center px-6 py-4">
-				<div className="flex w-full flex-row justify-between gap-6">
+			<div className="mb-3 flex items-center px-2 py-4">
+				<div className="flex w-full flex-row justify-between gap-4">
 					<button
 						type="submit"
 						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"

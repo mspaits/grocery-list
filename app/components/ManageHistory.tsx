@@ -4,14 +4,13 @@ export default function AddToList({
 }: {
 	setActive: () => Promise<void>;
 	removeChecks: () => Promise<void>;
-	logOut: () => void;
 }) {
 	return (
 		// Passing in handleSubmit prop to trigger addItem function on form submission
 
 		<div className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2">
-			<div className="flex flex-col rounded-3xl bg-zinc-200 px-6 py-4">
-				<div className="flex w-full flex-row justify-between gap-8">
+			<div className="flex flex-col rounded-3xl bg-zinc-200 px-2 py-4">
+				<div className="flex w-full flex-row justify-between gap-4">
 					<button
 						type="button"
 						onClick={setActive}

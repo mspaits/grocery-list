@@ -7,18 +7,23 @@ import { LucideIcon, Menu } from 'lucide-react';
 export default function Navbar({
 	pageTitle,
 	bgColor,
-	logOut,
+
 	icon: Icon,
 }: {
 	pageTitle: string;
 	bgColor: string;
-	logOut: () => void;
+
 	icon: LucideIcon;
 }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const buttonFormat =
 		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
+
+	function logOut() {
+		document.cookie = 'userName=; Path=/; Max-Age=0;';
+		window.location.replace('/');
+	}
 
 	return (
 		<div className={`relative z-50 ${bgColor}`}>

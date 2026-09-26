@@ -66,25 +66,16 @@ export default function History({ initialList }: { initialList: groceryObject[] 
 		await deleteFromDB(deleteList);
 	}
 
-	function logOut() {
-		document.cookie = 'userName=; Path=/; Max-Age=0;';
-		window.location.replace('/');
-	}
-
 	return (
 		<>
 			<Navbar
 				pageTitle={'Purchase History'}
 				bgColor={''}
-				logOut={logOut}
+
 				icon={ClipboardList}
 			></Navbar>
 			<ToBuyList listToRender={historyList} saveChecks={saveCheckState}></ToBuyList>
-			<ManageHistory
-				removeChecks={deleteChecks}
-				logOut={logOut}
-				setActive={moveToActive}
-			></ManageHistory>
+			<ManageHistory removeChecks={deleteChecks} setActive={moveToActive}></ManageHistory>
 			<IntroStatement sponsor={"Carl's Jr."}></IntroStatement>
 		</>
 	);

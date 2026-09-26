@@ -87,14 +87,9 @@ export default function Home({
 		await setActiveStateDB(updatedMoveList);
 	}
 
-	function logOut() {
-		document.cookie = 'userName=; Path=/; Max-Age=0;';
-		window.location.replace('/');
-	}
-
 	return (
 		<>
-			<Navbar pageTitle={'Shopping List'} bgColor={''} logOut={logOut} icon={ShoppingCart}></Navbar>
+			<Navbar pageTitle={'Shopping List'} bgColor={''} icon={ShoppingCart}></Navbar>
 			<ToBuyList listToRender={list} saveChecks={saveCheckState}></ToBuyList>
 			<AddToList handleSubmit={addItem} moveChecks={moveToHistory} warning={warning}></AddToList>
 			<IntroStatement sponsor={"Carl's Jr."}></IntroStatement>
