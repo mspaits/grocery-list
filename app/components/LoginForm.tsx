@@ -34,6 +34,9 @@ export default function LogIn() {
 							id="userName"
 							name="userName"
 							placeholder="username"
+							autoCapitalize="none"
+							autoCorrect="off"
+							autoComplete="off"
 							className="rounded-lg bg-white p-2 shadow-lg"
 						/>
 						<button

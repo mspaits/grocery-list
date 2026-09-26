@@ -21,7 +21,7 @@ export default function Navbar({
 		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition hover:bg-amber-700 hover:shadow-md hover:shadow-black/25';
 
 	return (
-		<div className={`relative z-50 ${bgColor} drop-shadow-lg`}>
+		<div className={`relative z-50 ${bgColor}`}>
 			<header
 				className={`mx-auto flex w-full max-w-188 items-center justify-between rounded ${bgColor} px-4 pt-6 pb-2 text-black`}
 			>
@@ -50,7 +50,7 @@ export default function Navbar({
 
 				<div
 					inert={!isMenuOpen}
-					className={`absolute top-22 left-0 flex w-full transform flex-col items-center bg-white text-lg font-semibold transition-transform md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+					className={`absolute top-20 left-0 flex w-full transform flex-col items-center bg-zinc-200 text-lg font-semibold transition-transform md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`}
 					style={{ transition: 'transform 0.2s ease, opacity 0.2s ease' }}
 				>
 					<Link

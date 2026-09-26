@@ -75,9 +75,7 @@ export default function AddToList({
 						<select
 							id="section"
 							name="section"
-
 							className="rounded-lg bg-white p-2 shadow"
-
 							autoComplete="off"
 						>
 							<option>Bakery</option>
