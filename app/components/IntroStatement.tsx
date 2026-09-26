@@ -8,8 +8,8 @@ const shortStack = Short_Stack({
 
 export default function IntroStatement({ sponsor }: { sponsor: string }) {
 	return (
-		<div className="flex flex-row justify-center gap-4 bg-zinc-100 p-2 text-gray-500">
-			<p className={`${shortStack.className} flex flex-col justify-center`}>
+		<div className="flex flex-row justify-center gap-3 bg-zinc-100 p-1 text-gray-500">
+			<p className={`${shortStack.className} flex flex-col justify-center text-center`}>
 				Brought to you by {sponsor} and
 				<br />
 			</p>
