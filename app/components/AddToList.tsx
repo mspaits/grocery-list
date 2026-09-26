@@ -20,7 +20,7 @@ export default function AddToList({
 				<div className="flex w-full flex-row justify-between gap-6">
 					<button
 						type="submit"
-						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:shadow-md active:shadow-black/25"
+						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg transition-all duration-50 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
 						Add Item
 					</button>
@@ -28,7 +28,7 @@ export default function AddToList({
 					<button
 						formAction={moveChecks}
 						type="submit"
-						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:shadow-md active:shadow-black/25"
+						className="w-full rounded-lg bg-amber-600 px-3 py-2 font-medium text-white shadow-lg transition-all duration-50 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
 						Finish Shopping
 					</button>
