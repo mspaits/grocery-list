@@ -72,7 +72,7 @@ export default function AddToList({
 					</div>
 					<div className="flex flex-col p-1">
 						<label htmlFor="section">Section</label>
-						<input
+						<select
 							type="text"
 							id="section"
 							name="section"
@@ -80,8 +80,7 @@ export default function AddToList({
 							className="rounded-lg bg-white p-2 shadow"
 							list="sectionList"
 							autoComplete="off"
-						/>
-						<datalist id="sectionList">
+						>
 							<option>Bakery</option>
 							<option>Beverages</option>
 							<option>Bread & Cereal</option>
@@ -97,7 +96,7 @@ export default function AddToList({
 							<option>Snacks</option>
 							<option>Spices</option>
 							<option>Other</option>
-						</datalist>
+						</select>
 					</div>
 				</div>
 			</div>
