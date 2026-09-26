@@ -7,12 +7,10 @@ import { LucideIcon, Menu } from 'lucide-react';
 export default function Navbar({
 	pageTitle,
 	bgColor,
-
 	icon: Icon,
 }: {
 	pageTitle: string;
 	bgColor: string;
-
 	icon: LucideIcon;
 }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);

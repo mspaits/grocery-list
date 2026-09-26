@@ -68,12 +68,7 @@ export default function History({ initialList }: { initialList: groceryObject[] 
 
 	return (
 		<>
-			<Navbar
-				pageTitle={'Purchase History'}
-				bgColor={''}
-
-				icon={ClipboardList}
-			></Navbar>
+			<Navbar pageTitle={'Purchase History'} bgColor={''} icon={ClipboardList}></Navbar>
 			<ToBuyList listToRender={historyList} saveChecks={saveCheckState}></ToBuyList>
 			<ManageHistory removeChecks={deleteChecks} setActive={moveToActive}></ManageHistory>
 			<IntroStatement sponsor={"Carl's Jr."}></IntroStatement>
