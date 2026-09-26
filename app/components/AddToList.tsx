@@ -73,12 +73,11 @@ export default function AddToList({
 					<div className="flex flex-col p-1">
 						<label htmlFor="section">Section</label>
 						<select
-							type="text"
 							id="section"
 							name="section"
-							placeholder="Dairy"
+
 							className="rounded-lg bg-white p-2 shadow"
-							list="sectionList"
+
 							autoComplete="off"
 						>
 							<option>Bakery</option>
