@@ -18,7 +18,7 @@ export default function Navbar({
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const buttonFormat =
-		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-50 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
+		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
 
 	return (
 		<div className={`relative z-50 ${bgColor}`}>
@@ -55,14 +55,14 @@ export default function Navbar({
 				>
 					<Link
 						href="/main-list"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600"
+						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
 					>
 						Shopping List
 					</Link>
 
 					<Link
 						href="/history"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600"
+						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
 					>
 						History
 					</Link>
@@ -70,7 +70,7 @@ export default function Navbar({
 					<button
 						onClick={logOut}
 						type="submit"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600"
+						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
 					>
 						Log Out
 					</button>
