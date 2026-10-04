@@ -5,18 +5,20 @@ import ManageHistory from '@/app/components/ManageHistory';
 import IntroStatement from '@/app/components/IntroStatement';
 import { type groceryObject } from '@/app/components/TypeDefinitions';
 import { useState, type ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
 import { checkDB, deleteFromDB, setActiveStateDB } from '@/app/components/TursoAuth';
 import { ClipboardList } from 'lucide-react';
 
 export default function History({ initialList }: { initialList: groceryObject[] }) {
+	const router = useRouter();
 	const [historyList, setHistoryList] = useState<groceryObject[]>(initialList);
 
 	// Keeping track of which checkboxes are checked
 	async function saveCheckState(e: ChangeEvent<HTMLInputElement>) {
-		const name = e.target.name;
+		const name = Number(e.target.id);
 		const isChecked = e.target.checked;
 		const updatedList = historyList.map((item) => {
-			if (item.name === name) {
+			if (item.id === name) {
 				return {
 					...item,
 					isChecked: isChecked,
@@ -50,10 +52,11 @@ export default function History({ initialList }: { initialList: groceryObject[] 
 		});
 
 		for (const item of updatedMoveList) {
-			await checkDB(item.name, item.isChecked);
+			await checkDB(item.id, item.isChecked);
 		}
 
 		await setActiveStateDB(updatedMoveList);
+		router.push('/main-list');
 	}
 
 	// Function to delete checked items from list

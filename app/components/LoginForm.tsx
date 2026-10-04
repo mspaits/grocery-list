@@ -8,7 +8,6 @@ export default function LogIn() {
 
 	async function getUserName(formData: FormData) {
 		const userName = formData.get('userName');
-		console.log(userName);
 
 		if (typeof userName !== 'string' || !userName.trim()) {
 			return;

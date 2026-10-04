@@ -6,7 +6,7 @@ import AddToList from '@/app/components/AddToList';
 import IntroStatement from '@/app/components/IntroStatement';
 import ToBuyList from '@/app/components/ToBuyList';
 import { addToDB, checkDB, setActiveStateDB } from '@/app/components/TursoAuth';
-import { type groceryObject } from '@/app/components/TypeDefinitions';
+import { userAddedGrocObj, type groceryObject } from '@/app/components/TypeDefinitions';
 import { ShoppingCart } from 'lucide-react';
 
 // This is the actual main page component
@@ -21,7 +21,7 @@ export default function Home({
 	const [warning, setWarning] = useState('');
 
 	async function addItem(formData: FormData) {
-		const newGrocery: groceryObject = {
+		const newGrocery: userAddedGrocObj = {
 			name: formData.get('itemName') as string,
 			quantity: Number(formData.get('quantity')),
 			section: formData.get('section') as string,
@@ -38,17 +38,17 @@ export default function Home({
 			}, 5000);
 			return;
 		} else {
-			await addToDB(newGrocery);
-			setList([...list, newGrocery]);
+			const savedGrocery = await addToDB(newGrocery);
+			setList((list) => [...list, savedGrocery]);
 		}
 	}
 
 	// Keeping track of which checkboxes are checked
 	async function saveCheckState(e: ChangeEvent<HTMLInputElement>) {
-		const name = e.target.name;
+		const id = Number(e.target.id);
 		const isChecked = e.target.checked;
 		const updatedList = list.map((item) => {
-			if (item.name === name) {
+			if (item.id === id) {
 				return {
 					...item,
 					isChecked: isChecked,
@@ -59,7 +59,8 @@ export default function Home({
 		});
 
 		setList(updatedList);
-		await checkDB(name, isChecked);
+		await checkDB(id, isChecked);
+		console.log(id);
 	}
 
 	async function moveToHistory() {
@@ -81,7 +82,7 @@ export default function Home({
 		});
 
 		for (const item of updatedMoveList) {
-			await checkDB(item.name, item.isChecked);
+			await checkDB(item.id, item.isChecked);
 		}
 
 		await setActiveStateDB(updatedMoveList);

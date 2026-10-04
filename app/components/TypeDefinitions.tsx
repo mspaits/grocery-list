@@ -1,4 +1,5 @@
 export type groceryObject = {
+	id: number;
 	name: string;
 	quantity: number;
 	section: string;
@@ -7,3 +8,5 @@ export type groceryObject = {
 	userName: string;
 	active: number;
 };
+
+export type userAddedGrocObj = Omit<groceryObject, 'id'>;

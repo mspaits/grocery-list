@@ -1,7 +1,7 @@
 'use server';
 
 import { connect } from '@tursodatabase/serverless';
-import { type groceryObject } from '@/app/components/TypeDefinitions';
+import { userAddedGrocObj, type groceryObject } from '@/app/components/TypeDefinitions';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
@@ -27,13 +27,14 @@ export async function fullList(userName: string, activeStatus: number) {
 	const selectRows = await selectAll.all([userName, activeStatus]);
 
 	const boolCorrectedRows = selectRows.map((row) => {
-		if (row.isChecked === 1) {
-			row.isChecked = true;
-		} else {
-			row.isChecked = false;
-		}
-		return row;
+		return {
+			...row,
+			id: Number(row.ID),
+			isChecked: row.isChecked === 1,
+		};
 	});
+
+	console.log(boolCorrectedRows);
 
 	const sortedBoolCorrectedRows = boolCorrectedRows
 		.sort((a, b) => {
@@ -62,28 +63,36 @@ export async function fullList(userName: string, activeStatus: number) {
 	return sortedBoolCorrectedRows;
 }
 
-export async function addToDB(groceryObject: groceryObject) {
+export async function addToDB(groceryObject: userAddedGrocObj) {
 	const { name, quantity, section, store, isChecked, userName, active } = groceryObject;
 
 	const addObject = await conn.prepare(
-		'INSERT INTO grocerylist (name, quantity, section, store, ischecked, username, active) VALUES (?, ?, ?, ?, ?, ?, ?)',
+		'INSERT INTO grocerylist (name, quantity, section, store, ischecked, username, active) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING ID AS id',
 	);
-	await addObject.run([name, quantity, section, store, isChecked, userName, active]);
+	const row = await addObject.get([name, quantity, section, store, isChecked, userName, active]);
+
+	console.log(row);
+
+	if (!row) {
+		throw new Error('Insert did not return an id');
+	}
+
+	return { ...groceryObject, id: Number(row.id) };
 }
 
 export async function deleteFromDB(groceryObjects: groceryObject[]) {
 	for (const grocery of groceryObjects) {
-		const deleteObject = await conn.prepare('DELETE FROM grocerylist WHERE name = (?)');
-		await deleteObject.run([grocery.name]);
+		const deleteObject = await conn.prepare('DELETE FROM grocerylist WHERE id = (?)');
+		await deleteObject.run([grocery.id]);
 	}
 }
 
-export async function checkDB(checkedItem: string, checkState: boolean) {
+export async function checkDB(checkedItem: number, checkState: boolean) {
 	if (checkState === true) {
-		const checkObject = await conn.prepare('UPDATE grocerylist SET isChecked = 1 WHERE name = (?)');
+		const checkObject = await conn.prepare('UPDATE grocerylist SET isChecked = 1 WHERE id = (?)');
 		await checkObject.run([checkedItem]);
 	} else if (checkState === false) {
-		const checkObject = await conn.prepare('UPDATE grocerylist SET isChecked = 0 WHERE name = (?)');
+		const checkObject = await conn.prepare('UPDATE grocerylist SET isChecked = 0 WHERE id = (?)');
 		await checkObject.run([checkedItem]);
 	}
 }
@@ -91,8 +100,8 @@ export async function checkDB(checkedItem: string, checkState: boolean) {
 export async function setActiveStateDB(groceryObjects: groceryObject[]) {
 	for (const grocery of groceryObjects) {
 		if (grocery.active === 1 || grocery.active === 0) {
-			const statement = await conn.prepare('UPDATE grocerylist SET active = ? WHERE name = ?');
-			await statement.run([grocery.active, grocery.name]);
+			const statement = await conn.prepare('UPDATE grocerylist SET active = ? WHERE id = ?');
+			await statement.run([grocery.active, grocery.id]);
 		}
 	}
 }
