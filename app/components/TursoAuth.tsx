@@ -34,8 +34,6 @@ export async function fullList(userName: string, activeStatus: number) {
 		};
 	});
 
-	console.log(boolCorrectedRows);
-
 	const sortedBoolCorrectedRows = boolCorrectedRows
 		.sort((a, b) => {
 			const sectionA = a.section.toUpperCase();
