@@ -60,7 +60,6 @@ export default function Home({
 
 		setList(updatedList);
 		await checkDB(id, isChecked);
-		console.log(id);
 	}
 
 	async function moveToHistory() {

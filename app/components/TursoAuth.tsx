@@ -104,7 +104,7 @@ export async function setActiveStateDB(groceryObjects: groceryObject[]) {
 	}
 }
 
-// Non-database general use functions.  Shameful bad practice.
+// Non-database general use functions.  Bad practice, probably.
 export async function getUser() {
 	const cookieStore = await cookies();
 	const userName: string | undefined = cookieStore.get('userName')?.value;
