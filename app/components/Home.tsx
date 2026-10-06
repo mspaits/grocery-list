@@ -39,7 +39,31 @@ export default function Home({
 			return;
 		} else {
 			const savedGrocery = await addToDB(newGrocery);
-			setList((list) => [...list, savedGrocery]);
+			setList((list) =>
+				[...list, savedGrocery]
+					.sort((a, b) => {
+						const sectionA = a.section.toUpperCase();
+						const sectionB = b.section.toUpperCase();
+						if (sectionA < sectionB) {
+							return -1;
+						}
+						if (sectionA > sectionB) {
+							return 1;
+						}
+						return 0;
+					})
+					.sort((a, b) => {
+						const storeA = a.store.toUpperCase();
+						const storeB = b.store.toUpperCase();
+						if (storeA < storeB) {
+							return -1;
+						}
+						if (storeA > storeB) {
+							return 1;
+						}
+						return 0;
+					}),
+			);
 		}
 	}
 
