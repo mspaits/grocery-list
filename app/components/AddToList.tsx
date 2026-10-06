@@ -1,5 +1,5 @@
 import Form from 'next/form';
-import { ComboboxBasic } from './ComboboxBasic';
+import { AutocompleteBasic } from './AutocompleteBasic';
 import { InputField } from './InputField';
 
 const storeList = ['Food Lion', 'Wegmans', 'Costco', 'Harris Teeter'];
@@ -80,22 +80,22 @@ export default function AddToList({
 						></InputField>
 					</div>
 					<div className="flex flex-col px-1">
-						<ComboboxBasic
+						<AutocompleteBasic
 							label={'Store'}
 							id={'store'}
 							name={'store'}
 							placeholder={'Wegmans'}
 							options={storeList}
-						></ComboboxBasic>
+						></AutocompleteBasic>
 					</div>
 					<div className="flex flex-col px-1">
-						<ComboboxBasic
+						<AutocompleteBasic
 							label={'Section'}
 							id={'section'}
 							name={'section'}
 							placeholder={'Section or aisle'}
 							options={sectionList}
-						></ComboboxBasic>
+						></AutocompleteBasic>
 					</div>
 				</div>
 			</div>
