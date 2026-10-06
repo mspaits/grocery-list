@@ -1,4 +1,26 @@
 import Form from 'next/form';
+import { ComboboxBasic } from './ComboboxBasic';
+import { InputField } from './InputField';
+
+const storeList = ['Food Lion', 'Wegmans', 'Costco', 'Harris Teeter'];
+
+const sectionList = [
+	'Bakery',
+	'Beverages',
+	'Bread & Cereal',
+	'Canned Goods',
+	'Condiments',
+	'Dairy',
+	'Deli',
+	'Frozen',
+	'International',
+	'Meat & Seafood',
+	'Pasta & Rice',
+	'Produce',
+	'Snacks',
+	'Spices',
+	'Other',
+];
 
 export default function AddToList({
 	handleSubmit,
@@ -40,60 +62,40 @@ export default function AddToList({
 					<div id="warner" className="mx-auto flex w-full max-w-2xl flex-wrap px-2 text-red-500">
 						{warning}
 					</div>
-					<div className="flex flex-col p-1">
-						<label htmlFor="itemName">Item</label>
-						<input
-							type="text"
-							id="itemName"
-							name="itemName"
-							placeholder="Milk"
-							className="rounded-lg bg-white p-2 shadow"
-						/>
+
+					<div className="flex flex-col px-1">
+						<InputField
+							label={'Item'}
+							id={'itemName'}
+							name={'itemName'}
+							placeholder={'Milk'}
+						></InputField>
 					</div>
-					<div className="flex flex-col p-1">
-						<label htmlFor="quantity">Quantity</label>
-						<input
-							type="text"
-							id="quantity"
-							name="quantity"
-							defaultValue="1"
-							className="rounded-lg bg-white p-2 shadow"
-						/>
+					<div className="flex flex-col px-1">
+						<InputField
+							label={'Quantity'}
+							id={'quantity'}
+							name={'quantity'}
+							defaultValue={1}
+						></InputField>
 					</div>
-					<div className="flex flex-col p-1">
-						<label htmlFor="store">Store</label>
-						<input
-							type="text"
-							id="store"
-							name="store"
-							placeholder="Wegmans"
-							className="rounded-lg bg-white p-2 shadow"
-						/>
+					<div className="flex flex-col px-1">
+						<ComboboxBasic
+							label={'Store'}
+							id={'store'}
+							name={'store'}
+							placeholder={'Wegmans'}
+							options={storeList}
+						></ComboboxBasic>
 					</div>
-					<div className="flex flex-col p-1">
-						<label htmlFor="section">Section</label>
-						<select
-							id="section"
-							name="section"
-							className="rounded-lg bg-white p-2 shadow"
-							autoComplete="off"
-						>
-							<option>Bakery</option>
-							<option>Beverages</option>
-							<option>Bread & Cereal</option>
-							<option>Canned Goods</option>
-							<option>Condiments</option>
-							<option>Dairy</option>
-							<option>Deli</option>
-							<option>Frozen</option>
-							<option>International</option>
-							<option>Meat & Seafood</option>
-							<option>Pasta & Rice</option>
-							<option>Produce</option>
-							<option>Snacks</option>
-							<option>Spices</option>
-							<option>Other</option>
-						</select>
+					<div className="flex flex-col px-1">
+						<ComboboxBasic
+							label={'Section'}
+							id={'section'}
+							name={'section'}
+							placeholder={'Section or aisle'}
+							options={sectionList}
+						></ComboboxBasic>
 					</div>
 				</div>
 			</div>
