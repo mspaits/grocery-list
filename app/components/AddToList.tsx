@@ -2,23 +2,116 @@ import Form from 'next/form';
 import { AutocompleteBasic } from './AutocompleteBasic';
 import { InputField } from './InputField';
 
-const storeList = ['Food Lion', 'Wegmans', 'Costco', 'Harris Teeter'];
+const storeList = [
+	// National chains
+	'Amazon Fresh',
+	'Aldi',
+	"BJ's Wholesale Club",
+	'Costco',
+	'Dollar General Market',
+	'Fresh Market',
+	'Grocery Outlet',
+	'Kroger',
+	'Lidl',
+	'Meijer',
+	'Natural Grocers',
+	'Piggly Wiggly',
+	"Sam's Club",
+	'Sprouts',
+	'Target',
+	"Trader Joe's",
+	'Walmart',
+	'Whole Foods',
+	'WinCo',
+
+	// Regional chains
+	'Acme',
+	'Big Y',
+	'Food Lion',
+	'Fred Meyer',
+	'Giant',
+	'Giant Eagle',
+	'H-E-B',
+	'Harris Teeter',
+	'Hy-Vee',
+	'Ingles',
+	'Jewel-Osco',
+	"Lucky's Market",
+	'Market Basket',
+	"Mariano's",
+	'Publix',
+	'Ralphs',
+	"Raley's",
+	'Safeway',
+	"Shaw's",
+	'ShopRite',
+	"Smith's",
+	'Stop & Shop',
+	'Tom Thumb',
+	'Vons',
+	'Weis Markets',
+	'Wegmans',
+	'Winn-Dixie',
+
+	// Online / delivery
+	'Amazon',
+	'FreshDirect',
+	'Imperfect Foods',
+	'Instacart',
+	'Misfit Market',
+	'Thrive Market',
+
+	// Other
+	'Other',
+];
 
 const sectionList = [
+	// Fresh perimeter
 	'Bakery',
-	'Beverages',
+	'Dairy & Eggs',
+	'Deli',
+	'Floral',
+	'Meat & Seafood',
+	'Produce',
+
+	// Frozen
+	'Frozen Breakfast',
+	'Frozen Desserts',
+	'Frozen Meals',
+	'Frozen Meat',
+	'Frozen Pizza',
+	'Frozen Vegetables',
+
+	// Center aisles
+	'Baby',
+	'Baking',
 	'Bread & Cereal',
 	'Canned Goods',
-	'Condiments',
-	'Dairy',
-	'Deli',
-	'Frozen',
-	'International',
-	'Meat & Seafood',
-	'Pasta & Rice',
-	'Produce',
-	'Snacks',
-	'Spices',
+	'Candy & Chocolate',
+	'Coffee & Tea',
+	'Condiments & Sauces',
+	'Cookies & Crackers',
+	'Ethnic & International',
+	'Grains, Pasta & Rice',
+	'Juice & Drinks',
+	'Nuts & Dried Fruit',
+	'Oil & Vinegar',
+	'Snacks & Chips',
+	'Soup',
+	'Spices & Seasonings',
+	'Water & Sparkling',
+
+	// Non-food
+	'Cleaning Supplies',
+	'Health & Pharmacy',
+	'Paper Products',
+	'Personal Care',
+	'Pet Supplies',
+
+	// Other
+	'Bulk',
+	'Prepared Foods',
+	'Wine, Beer & Spirits',
 	'Other',
 ];
 

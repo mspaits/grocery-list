@@ -3,6 +3,7 @@
 import Form from 'next/form';
 import { useRouter } from 'next/navigation';
 import { InputField } from './InputField';
+import IntroStatement from '@/app/components/IntroStatement';
 
 export default function LogIn() {
 	const router = useRouter();
@@ -48,6 +49,9 @@ export default function LogIn() {
 						</button>
 					</Form>
 				</div>
+			</div>
+			<div className="pt-10">
+				<IntroStatement sponsor={'mspaitsdev@gmail.com'}></IntroStatement>
 			</div>
 		</div>
 	);

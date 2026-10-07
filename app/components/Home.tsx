@@ -116,7 +116,7 @@ export default function Home({
 			<Navbar pageTitle={'Shopping List'} bgColor={''} icon={ShoppingCart}></Navbar>
 			<ToBuyList listToRender={list} saveChecks={saveCheckState}></ToBuyList>
 			<AddToList handleSubmit={addItem} moveChecks={moveToHistory} warning={warning}></AddToList>
-			<IntroStatement sponsor={"Carl's Jr."}></IntroStatement>
+			<IntroStatement sponsor={'mspaitsdev@gmail.com'}></IntroStatement>
 		</>
 	);
 }
