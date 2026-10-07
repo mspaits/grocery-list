@@ -14,6 +14,9 @@ export default function Navbar({
 	icon: LucideIcon;
 }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [listButtonActive, setListButtonActive] = useState(false);
+	const [historyButtonActive, setHistoryButtonActive] = useState(false);
+	const [logoutButtonActive, setLogoutButtonActive] = useState(false);
 
 	const buttonFormat =
 		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
@@ -58,22 +61,27 @@ export default function Navbar({
 				>
 					<Link
 						href="/main-list"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
+						onClick={() => setListButtonActive(true)}
+						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${listButtonActive ? 'bg-amber-600' : ''}`}
 					>
 						Shopping List
 					</Link>
 
 					<Link
 						href="/history"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
+						onClick={() => setHistoryButtonActive(true)}
+						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${historyButtonActive ? 'bg-amber-600' : ''}`}
 					>
 						History
 					</Link>
 
 					<button
-						onClick={logOut}
 						type="submit"
-						className="w-full list-none p-4 text-center transition hover:bg-amber-600 active:bg-amber-600"
+						onClick={() => {
+							setLogoutButtonActive(true);
+							logOut();
+						}}
+						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${logoutButtonActive ? 'bg-amber-600' : ''}`}
 					>
 						Log Out
 					</button>

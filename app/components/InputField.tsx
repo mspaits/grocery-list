@@ -26,6 +26,7 @@ export function InputField({
 				placeholder={placeholder}
 				className="bg-white"
 				defaultValue={defaultValue}
+				onFocus={(e) => e.target.select()}
 			/>
 			<FieldDescription>{description}</FieldDescription>
 		</Field>
