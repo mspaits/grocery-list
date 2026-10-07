@@ -1,5 +1,6 @@
 import { Field, FieldDescription, FieldLabel } from '@/components/ui/field';
 import { Input } from '@/components/ui/input';
+import type { ComponentProps } from 'react';
 
 export function InputField({
 	label,
@@ -8,6 +9,7 @@ export function InputField({
 	placeholder,
 	description,
 	defaultValue,
+	...props
 }: {
 	label: string;
 	id: string;
@@ -15,7 +17,7 @@ export function InputField({
 	placeholder?: string;
 	description?: string;
 	defaultValue?: number;
-}) {
+} & ComponentProps<typeof Input>) {
 	return (
 		<Field>
 			<FieldLabel htmlFor={id}>{label}</FieldLabel>
@@ -27,6 +29,7 @@ export function InputField({
 				className="bg-white"
 				defaultValue={defaultValue}
 				onFocus={(e) => e.target.select()}
+				{...props}
 			/>
 			<FieldDescription>{description}</FieldDescription>
 		</Field>
