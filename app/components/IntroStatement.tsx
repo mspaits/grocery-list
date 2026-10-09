@@ -13,7 +13,15 @@ export default function IntroStatement({ sponsor }: { sponsor: string }) {
 				Brought to you by {sponsor} and
 				<br />
 			</p>
-			<Image src="/codeClubLogo.png" alt="Code Club RDU logo" width={100} height={100} />
+			<Image
+				src="/codeClubLogo.png"
+				alt="Code Club RDU logo"
+				width={498}
+				height={452}
+				sizes="100px"
+				className="shrink-0 self-center"
+				style={{ width: 100, height: 'auto' }}
+			/>
 		</div>
 	);
 }
