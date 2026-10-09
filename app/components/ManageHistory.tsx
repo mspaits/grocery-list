@@ -1,3 +1,5 @@
+import { ArrowLeft, Trash } from 'lucide-react';
+
 export default function AddToList({
 	setActive,
 	removeChecks,
@@ -14,16 +16,18 @@ export default function AddToList({
 					<button
 						type="button"
 						onClick={setActive}
-						className="w-full rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+						className="flex w-full flex-row items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
-						Add to List
+						<ArrowLeft size={18}></ArrowLeft>
+						Back on List
 					</button>
 
 					<button
 						type="button"
 						onClick={removeChecks}
-						className="w-full rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+						className="flex w-full flex-row items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
+						<Trash size={18}></Trash>
 						Delete Items
 					</button>
 				</div>

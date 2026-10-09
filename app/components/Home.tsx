@@ -7,7 +7,7 @@ import IntroStatement from '@/app/components/IntroStatement';
 import ToBuyList from '@/app/components/ToBuyList';
 import { addToDB, checkDB, setActiveStateDB } from '@/app/components/TursoAuth';
 import { userAddedGrocObj, type groceryObject } from '@/app/components/TypeDefinitions';
-import { ShoppingCart } from 'lucide-react';
+import { ScrollText } from 'lucide-react';
 
 // This is the actual main page component
 export default function Home({
@@ -113,7 +113,7 @@ export default function Home({
 
 	return (
 		<>
-			<Navbar pageTitle={'Shopping List'} bgColor={''} icon={ShoppingCart}></Navbar>
+			<Navbar pageTitle={'Shopping List'} bgColor={''} icon={ScrollText}></Navbar>
 			<ToBuyList listToRender={list} saveChecks={saveCheckState}></ToBuyList>
 			<AddToList handleSubmit={addItem} moveChecks={moveToHistory} warning={warning}></AddToList>
 			<IntroStatement sponsor={'mspaitsdev@gmail.com'}></IntroStatement>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { LucideIcon, Menu } from 'lucide-react';
+import { type LucideIcon, Menu, LogOut, ScrollText, Groceries } from 'lucide-react';
 
 export default function Navbar({
 	pageTitle,
@@ -19,7 +19,7 @@ export default function Navbar({
 	const [logoutButtonActive, setLogoutButtonActive] = useState(false);
 
 	const buttonFormat =
-		'rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
+		'flex flex-row items-center gap-1 rounded-lg font-bold bg-amber-600 text-white px-3 py-2 transition transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:bg-amber-700 active:scale-95 cursor-pointer';
 
 	function logOut() {
 		document.cookie = 'userName=; Path=/; Max-Age=0;';
@@ -32,18 +32,21 @@ export default function Navbar({
 				className={`mx-auto flex w-full max-w-188 items-center justify-between rounded ${bgColor} px-4 pt-6 pb-2 text-black`}
 			>
 				<div className="flex items-center gap-3">
-					<Icon size={28} className="text-lime-500" />
+					<Icon size={32} className="text-lime-500" />
 					<p className="text-3xl font-bold tracking-tight text-gray-700">{pageTitle}</p>
 				</div>
 
-				<ul className="hidden items-center gap-8 md:flex">
+				<ul className="hidden items-center gap-6 md:flex">
 					<Link href="/main-list" className={buttonFormat}>
+						<ScrollText size={18} />
 						Shopping List
 					</Link>
 					<Link href="/history" className={buttonFormat}>
+						<Groceries size={18} />
 						History
 					</Link>
 					<button onClick={logOut} className={buttonFormat}>
+						<LogOut size={18} />
 						Log Out
 					</button>
 				</ul>
@@ -62,16 +65,18 @@ export default function Navbar({
 					<Link
 						href="/main-list"
 						onClick={() => setListButtonActive(true)}
-						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${listButtonActive ? 'bg-amber-600' : ''}`}
+						className={`flex w-full list-none flex-row items-center justify-center gap-1 p-4 text-center transition hover:bg-amber-600 ${listButtonActive ? 'bg-amber-600' : ''}`}
 					>
+						<ScrollText size={18} />
 						Shopping List
 					</Link>
 
 					<Link
 						href="/history"
 						onClick={() => setHistoryButtonActive(true)}
-						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${historyButtonActive ? 'bg-amber-600' : ''}`}
+						className={`flex w-full list-none flex-row items-center justify-center gap-1 p-4 text-center transition hover:bg-amber-600 ${historyButtonActive ? 'bg-amber-600' : ''}`}
 					>
+						<Groceries size={18} />
 						History
 					</Link>
 
@@ -81,8 +86,9 @@ export default function Navbar({
 							setLogoutButtonActive(true);
 							logOut();
 						}}
-						className={`w-full list-none p-4 text-center transition hover:bg-amber-600 ${logoutButtonActive ? 'bg-amber-600' : ''}`}
+						className={`flex w-full list-none flex-row items-center justify-center gap-1 p-4 text-center transition hover:bg-amber-600 ${logoutButtonActive ? 'bg-amber-600' : ''}`}
 					>
+						<LogOut size={18} />
 						Log Out
 					</button>
 				</div>

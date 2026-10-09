@@ -1,7 +1,7 @@
 import Form from 'next/form';
 import { AutocompleteBasic } from './AutocompleteBasic';
 import { InputField } from './InputField';
-import { Plus } from 'lucide-react';
+import { Plus, ArrowRight } from 'lucide-react';
 
 const storeList = [
 	// National chains
@@ -130,7 +130,7 @@ export default function AddToList({
 
 		<Form
 			action={handleSubmit}
-			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-2"
+			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-3"
 		>
 			<div className="mb-3 flex items-center px-2 py-4">
 				<div className="flex w-full flex-row justify-between gap-4">
@@ -145,8 +145,9 @@ export default function AddToList({
 					<button
 						formAction={moveChecks}
 						type="submit"
-						className="w-full rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+						className="flex w-full flex-row items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
+						<ArrowRight size={18}></ArrowRight>
 						Finish Shopping
 					</button>
 				</div>
