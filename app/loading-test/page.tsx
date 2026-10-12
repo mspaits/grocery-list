@@ -1,5 +1,5 @@
-import LoadingScreen from '@/app/components/LoadingScreen';
+import LoadingScreenSpaits from '@/app/components/LoadingScreenSpaits';
 
 export default function LoadingTest() {
-	return <LoadingScreen></LoadingScreen>;
+	return <LoadingScreenSpaits></LoadingScreenSpaits>;
 }

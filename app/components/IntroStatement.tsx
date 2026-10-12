@@ -21,6 +21,7 @@ export default function IntroStatement({ sponsor }: { sponsor: string }) {
 				sizes="100px"
 				className="shrink-0 self-center"
 				style={{ width: 100, height: 'auto' }}
+				loading="eager"
 			/>
 		</div>
 	);
