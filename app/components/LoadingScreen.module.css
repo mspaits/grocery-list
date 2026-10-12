@@ -1,0 +1,29 @@
+.icons {
+	--icon-size: 24px;
+	display: flex;
+	width: var(--icon-size);
+	overflow: hidden;
+	animation: loading-icons var(--cycle-duration) steps(var(--icon-count), jump-start) infinite;
+}
+
+.icons > svg {
+	flex: 0 0 var(--icon-size);
+	width: var(--icon-size);
+	height: var(--icon-size);
+}
+
+/* Reveal the first icon immediately, then one more each second before resetting. */
+@keyframes loading-icons {
+	from {
+		width: 0;
+	}
+	to {
+		width: calc(var(--icon-size) * var(--icon-count));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.icons {
+		animation: none;
+	}
+}
