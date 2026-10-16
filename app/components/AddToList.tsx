@@ -114,13 +114,13 @@ export default function AddToList({
 
 		<Form
 			action={handleSubmit}
-			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-3"
+			className="mb-3 flex w-full max-w-3xl min-w-0 flex-col self-center px-4"
 		>
 			<div className="mb-3 flex items-center px-2 py-4">
-				<div className="flex w-full flex-row justify-between gap-4">
+				<div className="flex w-full flex-row justify-between gap-5">
 					<button
 						type="submit"
-						className="flex w-full flex-row items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+						className="flex w-full flex-row items-center justify-center gap-1 rounded-md bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
 						<Plus size={18}></Plus>
 						Add Item
@@ -129,7 +129,7 @@ export default function AddToList({
 					<button
 						formAction={moveChecks}
 						type="submit"
-						className="flex w-full flex-row items-center justify-center gap-1 rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+						className="flex w-full flex-row items-center justify-center gap-1 rounded-md bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-150 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 					>
 						<ArrowRight size={18}></ArrowRight>
 						Finish Shopping
@@ -137,7 +137,7 @@ export default function AddToList({
 				</div>
 			</div>
 
-			<div className="flex flex-col rounded-3xl bg-lime-500 p-3 shadow">
+			<div className="flex flex-col rounded-xl border border-zinc-300 bg-lime-500 p-3 shadow-lg">
 				<div className="flex flex-col">
 					<div id="warner" className="mx-auto flex w-full max-w-2xl flex-wrap px-2 text-red-500">
 						{warning}

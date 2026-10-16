@@ -16,7 +16,7 @@ export default function ToBuyList({
 	storeList = storeList.filter((store, index) => storeList.indexOf(store) === index);
 
 	return (
-		<div className="flex w-full max-w-3xl min-w-0 flex-col self-center px-3">
+		<div className="flex w-full max-w-3xl min-w-0 flex-col self-center px-4">
 			<ul>
 				{
 					// For each store, list each store and for each do all the stuff below
@@ -25,7 +25,10 @@ export default function ToBuyList({
 						const perStoreList = listToRender.filter((grocery) => grocery.store === store);
 
 						return (
-							<div className="my-3 rounded-3xl bg-white px-6 py-4 shadow" key={store}>
+							<div
+								className="my-3 rounded-xl border border-zinc-300 bg-white px-6 py-4 shadow-md"
+								key={store}
+							>
 								<p className="mb-2 text-xl font-bold">{store}</p>
 								<ul>
 									{

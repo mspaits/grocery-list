@@ -22,10 +22,10 @@ export default function LogIn() {
 
 	return (
 		<div>
-			<h1 className="bg-zinc-200 py-6 text-center text-4xl font-bold tracking-tight text-gray-700">
+			<h1 className="py-6 text-center text-4xl font-bold tracking-tight text-gray-700">
 				What Did I Eat!
 			</h1>
-			<h3 className="bg-zinc-200 py-6 text-center text-2xl font-bold tracking-tight text-gray-700">
+			<h3 className="py-6 text-center text-2xl font-bold tracking-tight text-gray-700">
 				The grocery list app that remembers what you bought.
 			</h3>
 			<p className="mx-4 mt-8 mb-4 text-center text-lg">Please log in with your username</p>
@@ -43,7 +43,7 @@ export default function LogIn() {
 						></InputField>
 						<button
 							type="submit"
-							className="w-full rounded-lg bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-50 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
+							className="w-full rounded-md bg-amber-600 px-3 py-2 text-sm font-medium text-white shadow-lg transition-all duration-50 ease-in-out hover:bg-amber-700 hover:shadow-md hover:shadow-black/25 active:scale-95 active:bg-amber-700"
 						>
 							Submit
 						</button>
